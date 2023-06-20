@@ -2,13 +2,23 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
-import { Button } from "../../../components/ui/button"
+import { MdKeyboardArrowDown } from "react-icons/md";
 
 
 
 const Header = () => {
-  const [isOpen, setIsOpen] = useState(false);
+
+ const [isOpen, setIsOpen] = useState(false);
+  const [selectedOption, setSelectedOption] = useState('');
+
+  const handleDropdownOpen = () => {
+    setIsOpen(true);
+  };
+
+  const handleDropdownClose = () => {
+    setIsOpen(false);
+  };
+
   return (
     <header className="flex md:gap-x-[56px] gap-y-5 items-center pb-2 md:flex-row flex-col">
 
@@ -16,34 +26,41 @@ const Header = () => {
           <Link href={"/"}>Home</Link>
         </span>
 
-        <span>
-            <button onClick={() => setIsOpen((prev) => !prev)} className="flex items-center gap-x-1.5">
-          <div className="text-md text-gray-800">
-              Catergories
+              <span className="relative" onMouseLeave={handleDropdownClose}>
+        <button
+          onMouseEnter={handleDropdownOpen}
+          className="flex items-center gap-1 text-md text-gray-800"
+        >
+          {selectedOption || "Categories"} <MdKeyboardArrowDown />
+        </button>
+        {isOpen && (
+          <div className="bg-white absolute border drop-shadow-xl -ml-8 md:-ml-12 w-40">
+            <a href="/cloth">
+              <h3 className="px-4 py-2 hover:bg-slate-100 text-gray-500">
+                Branded Cloth
+              </h3>
+            </a>
+            <a href="/watch">
+              <h3 className="px-4 py-2 hover:bg-slate-100 text-gray-500">
+                Traditinal Watch
+              </h3>
+            </a>
+            <a href="/glasses">
+              <h3 className="px-4 py-2 hover:bg-slate-100 text-gray-500">
+                Sun Glasses
+              </h3>
+            </a>
+            <a href="/shoes">
+              <h3 className="px-4 py-2 hover:bg-slate-100 text-gray-500">
+                Cool Shoes
+              </h3>
+            </a>
           </div>
-            <div>{isOpen ?  <MdKeyboardArrowUp/> : <MdKeyboardArrowDown/>}</div>
-            </button>
-
-          {isOpen && (
-            <div className="bg-white absolute drop-shadow-xl -ml-8 md:-ml-10 mt-1">
-                <h3 className="px-4 py-1 hover:bg-slate-100">
-                  <a href="./categories/cloth">Branded Cloth</a>
-                </h3>
-                <h3 className="px-4 py-1 hover:bg-slate-100">
-                  <a href="./categories/watch">Traditinal Watch</a>
-                </h3>
-                <h3 className="px-4 py-1 hover:bg-slate-100">
-                  <a href="./categories/glasses">Sun Glasses</a>
-                </h3>
-                <h3 className="px-4 py-1 hover:bg-slate-100">
-                  <a href="./categories/shoes">Cool Shoes</a>
-                </h3>
-            </div>
-          )}
-        </span>
+        )}
+      </span>
 
         <span className="text-md text-gray-800">
-          <Link href={"/"}>All Products</Link>
+          <Link href={"/all_products"}>All Products</Link>
         </span>
 
     </header>

@@ -18,7 +18,6 @@ const Products = () => {
           </div>
         <h6 className="text-gray-800">Style Avenue</h6>
         <span className="block mt-2 font-bold text-2xl text-gray-800">$199</span>
-        <button className="self-end but">Add to Cart</button>
       </div>
 
       <div className="container flex flex-col flex-1 hover:scale-110 transition duration-700 ease-in-out">
@@ -33,7 +32,6 @@ const Products = () => {
           </div>
         <h6 className="text-gray-800">The Watch Vault</h6>
         <span className="block mt-2 font-bold text-2xl text-gray-800">$120</span>
-        <button className="self-end but">Add to Cart</button>
       </div>
 
       <div className="container flex flex-col flex-1 hover:scale-110 transition duration-700 ease-in-out">
@@ -48,7 +46,6 @@ const Products = () => {
         </div>
         <h6 className="text-gray-800">Footwear Fusion</h6>
         <span className="block mt-2 font-bold text-2xl text-gray-800">$99</span>
-        <button className="self-end but">Add to Cart</button>
       </div>
       </section>
     </div>

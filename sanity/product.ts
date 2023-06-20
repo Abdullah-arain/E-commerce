@@ -6,7 +6,7 @@ const product = {
   title: "Products",
   fields: [
     {
-        name: "title",
+        name: "item",
         type: "string",
         title: "Product Name"
     },

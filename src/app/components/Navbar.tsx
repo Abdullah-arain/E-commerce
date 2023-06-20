@@ -7,9 +7,6 @@ import { MdKeyboardArrowUp } from 'react-icons/md';
 import { FiSearch } from 'react-icons/fi';
 import { RiShoppingCartFill } from 'react-icons/ri';
 import { Button } from '../../../components/ui/button';
-import {DropdownMenuRadioGroupDemo} from "../components/Dropdown"
-import { ButtonLink } from '../components/Dropdown';
-import { ButtonLink2 } from '../components/Dropdown';
 import  Drop  from '../components/Drop';
 import Hamburger from './Hamburger';
 
